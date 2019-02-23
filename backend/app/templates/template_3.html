@@ -6,17 +6,30 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <style type="text/css">
   .container {
-    max-width: 500px;
-    padding-top: 100px;
+    max-width: 80%;
+    margin: 5cm auto;
+  }
+  td {
+    text-align: center;
+    vertical-align: middle;
   }
   </style>
+ <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <div style="background-image: url(https://image.flaticon.com/icons/svg/198/198479.svg); background-repeat: repeat;
+  width:100%;height:300px;"></div>
   <div class="container">
     {% if data.data.invoice_number %}
     <h3>Invoice number: {{ data.data.invoice_number }}</h3>
     {% endif %}
-    <table style="width:100%">
+    <h3>Order received at: {{ data.data.ordered_at }}</h3>
+    <h3>Progess:
+      <progress value="{{ data.data.progress }}" max="100"></progress>
+    </h3>
+    <table>
+     <caption>Order summary</caption>
       <tr>
         <th>Name</th>
         <th>Amount</th>
@@ -32,7 +45,6 @@
       </tr>
       {% endfor %}
     </table>
-    <h3>Total price: {{ total }}</h3>
   </div>
 </body>
 </html>
