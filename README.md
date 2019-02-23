@@ -38,8 +38,15 @@ Required: You have a working installation of both Docker and Docker Compose
 
 Build and run the containers with
 ```console
+docker-compose up --build
+```
+
+You can quit them with `Ctrl+C` in the terminal. After building them once, you can start them with
+```console
 docker-compose up --remove-orphans
 ```
+in the future.
+
 Access the backend server by visiting http://localhost:5000 in your favorite browser.
 
 Now you could send a post request to http://localhost:5000/pdf, e.g. with Postman, to download a PDF.
