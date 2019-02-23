@@ -1,17 +1,37 @@
-from flask import Flask, Response, render_template
+from flask import Flask, request, Response, render_template
 import jinja2
 import pdfkit
 
 service = Flask(__name__)
 
-# Open route for PDF service
-@service.route("/pdf", methods=['POST'])
-def downloader():
-    result = simple_template()
-    return Response(result, mimetype='application/pdf')
+# Open route to check whether server is up and running
+@service.route('/')
+def app():
+    return 'Hello backend!'
 
 
-def simple_template():
+@service.route("/pdf-1", methods=['POST'])
+def downloader_1():
+    example_data = "Hello, Python Pizza Berlin!"
+    result = generate_pdf_with(example_data, 'template_1.html')
+    return result
+
+
+@service.route("/pdf-2", methods=['POST'])
+def downloader_2():
+    input = request.args
+    result = generate_pdf_with(input, 'template_2.html')
+    return result
+
+
+@service.route("/pdf-3", methods=['POST'])
+def downloader_3():
+    input = request.get_json()
+    result = generate_pdf_with(input, 'template_3.html')
+    return result
+
+
+def generate_pdf_with(data_input, template):
     opt = {
         'margin-top': '2.0cm',
         'margin-right': '2.0cm',
@@ -19,15 +39,10 @@ def simple_template():
         'margin-left': '2.0cm',
         'encoding': "UTF-8"
     }
-    example_user = "This guy"
-    pdf = pdfkit.from_string(render_template('template.html', user=example_user), output_path=False, options=opt)
-    return pdf
-
-# Open route to check whether server is up and running
-@service.route('/')
-def app():
-    return 'Hello PDF!'
+    pdf = pdfkit.from_string(render_template(template, data=data_input), output_path=False, options=opt)
+    return Response(pdf, mimetype='application/pdf')
 
 
+# Run our application
 if __name__ == '__main__':
     service.run(debug=True,host='0.0.0.0')

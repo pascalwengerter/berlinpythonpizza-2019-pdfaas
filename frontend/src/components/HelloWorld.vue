@@ -1,14 +1,16 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <form action="http://localhost:5000/pdf" method="post">
+    <form action="http://localhost:5000/pdf-1" method="post">
       <input type="submit" name="buttonone" value="Request PDF" />
     </form>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
+    <form action="http://localhost:5000/pdf-2" method="post">
+      <input type="text" name="Name" value="name" />
+      <input type="submit" name="buttonone" value="Request PDF" />
+    </form>
+    <form action="http://localhost:5000/pdf-3" method="post">
+      <input type="submit" name="buttonone" value="Request PDF" />
+    </form>
   </div>
 </template>
 
@@ -21,7 +23,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
   margin: 40px 0 0;

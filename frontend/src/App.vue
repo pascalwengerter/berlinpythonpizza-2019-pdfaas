@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <img alt="Pizza logo" src="./assets/index.png">
     <HelloWorld msg="Welcome to our example frontend"/>
   </div>
 </template>

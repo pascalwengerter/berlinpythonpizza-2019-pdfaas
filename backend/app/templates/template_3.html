@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PDF Template Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style type="text/css">
+  .container {
+    max-width: 500px;
+    padding-top: 100px;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    {% if data.data.invoice_number %}
+    <h3>Invoice number: {{ data.data.invoice_number }}</h3>
+    {% endif %}
+    <table style="width:100%">
+      <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Price/Piece</th>
+        <th>Subtotal</th>
+      </tr>
+      {% for ingredient in data.data.ingredients %}
+      <tr>
+        <td>{{ ingredient.name }}</td>
+        <td>{{ ingredient.amount }}</td>
+        <td>{{ ingredient.price }}</td>
+        <td>{{ ingredient.amount * ingredient.price }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</body>
+</html>
