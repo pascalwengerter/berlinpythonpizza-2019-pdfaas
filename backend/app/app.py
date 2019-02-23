@@ -17,7 +17,7 @@ def downloader_1():
     return result
 
 
-@service.route("/pdf-2", methods=['POST'])
+@service.route("/pdf-2", methods=['GET'])
 def downloader_2():
     input = request.args
     result = generate_pdf_with(input, 'template_2.html')
