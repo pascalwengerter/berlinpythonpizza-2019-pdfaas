@@ -14,7 +14,7 @@ Build the container image and make it interactively to log errors
 docker build -t flaskbackend . && docker run -p 5000:5000 flaskbackend
 ```
 
-Access it by visiting http://localhost:5000 in your favorite browser.
+Access it by visiting http://localhost:5000 in your favorite browser. There is a mounted volume, which means changes in the Python code do not need another docker build & run to be used.
 
 Now you could send a post request to http://localhost:5000/pdf, e.g. with [Postman](https://www.getpostman.com/), to download a PDF.
 
@@ -38,7 +38,7 @@ Required: You have a working installation of both Docker and Docker Compose
 
 Build and run the containers with
 ```console
-docker-compose up
+docker-compose up --remove-orphans
 ```
 Access the backend server by visiting http://localhost:5000 in your favorite browser.
 
