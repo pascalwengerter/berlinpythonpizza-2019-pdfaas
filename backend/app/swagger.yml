@@ -1,0 +1,17 @@
+# this is just a demo file
+swagger: "2.0"
+paths:
+  /pdf-3:
+    post:
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Order information to be pdf-printed"
+        required: true
+        type: "array"
+        items:
+          type: "string"
+          enum:
+          - "available"
+          - "pending"
+          - "sold"
