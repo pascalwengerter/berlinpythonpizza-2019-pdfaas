@@ -1,16 +1,19 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <form action="http://localhost:5000/pdf-1" method="post">
-      <input type="submit" name="buttonone" value="Request PDF" />
-    </form>
-    <form action="http://localhost:5000/pdf-2" method="post">
-      <input type="text" name="Name" value="name" />
-      <input type="submit" name="buttonone" value="Request PDF" />
-    </form>
-    <form action="http://localhost:5000/pdf-3" method="post">
-      <input type="submit" name="buttonone" value="Request PDF" />
-    </form>
+    <details style="margin-bottom: 25px;">
+      <summary>PDF PRINT</summary>
+      <form action="http://localhost:5000/pdf-1" method="post">
+        <input type="submit" value="Request PDF" />
+      </form>
+    </details>
+    <details>
+      <summary>ALL YOUR DATA</summary>
+      <form action="http://localhost:5000/pdf-2" method="get">
+        First name: <input type="text" name="name" />
+        <input type="submit" value="Request PDF" />
+      </form>
+    </details>
   </div>
 </template>
 
