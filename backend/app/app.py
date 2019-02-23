@@ -1,6 +1,7 @@
 from flask import Flask, request, Response, render_template
 import jinja2
 import pdfkit
+import json
 
 service = Flask(__name__)
 
@@ -26,7 +27,12 @@ def downloader_2():
 
 @service.route("/pdf-3", methods=['POST'])
 def downloader_3():
-    input = request.get_json()
+    # example json to post to downloader_3
+    f = open("app/example.json")
+    input = json.load(f)
+    f.close()
+    # uncomment line below to use real post request payload
+    # input = request.get_json()
     result = generate_pdf_with(input, 'template_3.html')
     return result
 

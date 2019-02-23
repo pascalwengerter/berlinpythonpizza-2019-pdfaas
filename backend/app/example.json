@@ -1,0 +1,43 @@
+{
+	"data": {
+		"name": "Super Mario",
+		"street": "Stada Calzone 4",
+		"city": "14162 Berlin",
+		"type": "Pizza",
+		"ordered_at": "2019-02-23T09:00:00+00:00",
+		"invoice_number": "#23_02_2019",
+		"progress": 77,
+		"ingredients": [
+			{
+				"name": "Tomatoes",
+				"amount": 5,
+				"price": 2
+			},
+			{
+				"name": "Mozarella",
+				"amount": 2,
+				"price": 5
+			},
+			{
+				"name": "Peperone",
+				"amount": 5,
+				"price": 7
+			},
+			{
+				"name": "Bacon",
+				"amount": 3,
+				"price": 3.5
+			},
+			{
+				"name": "Espresso",
+				"amount": 23,
+				"price": 1.35
+			},
+			{
+				"name": "Chocolate bars",
+				"amount": 139,
+				"price": 0.35
+			}
+		]
+	}
+}
