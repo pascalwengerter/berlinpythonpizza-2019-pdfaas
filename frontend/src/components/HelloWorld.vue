@@ -3,13 +3,13 @@
     <h1>{{ msg }}</h1>
     <details style="margin-bottom: 25px;">
       <summary>PDF PRINT</summary>
-      <form action="http://localhost:5000/pdf-1" method="get">
+      <form action="http://localhost:5000/pdf-1" method="get" target="_blank">
         <input type="submit" value="Request PDF" />
       </form>
     </details>
     <details>
       <summary>ALL YOUR DATA</summary>
-      <form action="http://localhost:5000/pdf-2" method="get">
+      <form action="http://localhost:5000/pdf-2" method="get" target="_blank">
         First name: <input type="text" name="name" />
         <input type="submit" value="Request PDF" />
       </form>
