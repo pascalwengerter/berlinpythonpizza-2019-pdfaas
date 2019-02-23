@@ -3,7 +3,7 @@
     <h1>{{ msg }}</h1>
     <details style="margin-bottom: 25px;">
       <summary>PDF PRINT</summary>
-      <form action="http://localhost:5000/pdf-1" method="post">
+      <form action="http://localhost:5000/pdf-1" method="get">
         <input type="submit" value="Request PDF" />
       </form>
     </details>

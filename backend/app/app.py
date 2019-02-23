@@ -10,7 +10,7 @@ def app():
     return 'Hello backend!'
 
 
-@service.route("/pdf-1", methods=['POST'])
+@service.route("/pdf-1", methods=['GET'])
 def downloader_1():
     example_data = "Hello, Python Pizza Berlin!"
     result = generate_pdf_with(example_data, 'template_1.html')
